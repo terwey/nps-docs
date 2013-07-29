@@ -6290,7 +6290,7 @@ Homepage
 ============================================================================================== */
 .homepage-hero {
   padding-top: 50px !important;
-  background-color: #7795b4;
+  background-color: #007FB3;
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -6389,7 +6389,7 @@ Homepage
   width: 0px;
   height: 0px;
   border: 3px solid transparent;
-  border-left: 3px solid #7795b4;
+  border-left: 3px solid #007FB3;
   float: left;
   display: block;
   margin: 6px;
@@ -6428,7 +6428,7 @@ Homepage
   line-height: 32px;
 }
 .homepage-footer.container-fluid .footer-nav li a:hover {
-  color: #7795b4;
+  color: #007FB3;
   text-decoration: underline;
 }
 .homepage-footer.container-fluid .twitter {
@@ -6445,7 +6445,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #7795b4;
+  background-color: #007FB3;
   color: #2d2d2d;
 }
 .container-fluid {
@@ -6572,7 +6572,7 @@ body {
 Componenets
 ============================================================================================== */
 a {
-  color: #7795b4;
+  color: #007FB3;
 }
 .btn.btn-sidebar {
   padding: 7px 10px;
@@ -6603,13 +6603,13 @@ a {
   background-color: #13132a;
 }
 .btn.btn-sidebar:hover .icon-bar {
-  background-color: #7795b4;
+  background-color: #007FB3;
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
 }
 code {
-  color: #7795b4;
+  color: #007FB3;
 }
 .navbar {
   -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
@@ -6628,16 +6628,16 @@ code {
   padding: 6px 20px;
 }
 .navbar .navbar-inner .brand {
-  color: #7795b4;
+  color: #007FB3;
   text-shadow: none;
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
 }
 .navbar .navbar-inner .navbar-text {
-  color: #7795b4;
+  color: #007FB3;
 }
 .navbar .navbar-inner .navbar-text a {
-  color: #7795b4;
+  color: #007FB3;
 }
 @media (max-width: 767px) {
   .navbar .navbar-inner {
@@ -6727,7 +6727,7 @@ code {
 }
 pre {
   border: none;
-  background-color: #7795b4;
+  background-color: #007FB3;
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
   border-radius: 0px;
@@ -6978,7 +6978,7 @@ table tr td:last-child {
   font-size: 13px;
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
-  color: #7795b4;
+  color: #007FB3;
   line-height: 28px;
 }
 .well.well-sidebar .twitter hr {

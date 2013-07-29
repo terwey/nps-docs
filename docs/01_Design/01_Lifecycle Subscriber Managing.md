@@ -2,13 +2,13 @@
 
 The best way for plugin lifecycle management is registering event subscriber. Events lifecycle consists of 3 events:
 
-    - plugin.install
-    - plugin.remove
-    - plugin update
+  - plugin.install
+  - plugin.remove
+  - plugin update
 
 This is example of simple event subscriber class:
 
-```
+```php
 // ExamplePluginBundle/EventListener/LifecycleSubscriber.php
 <?php
 namespace Newscoop\ExamplePluginBundle\EventListener;

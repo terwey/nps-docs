@@ -4,12 +4,11 @@
 	"image": "",
 	"theme": "navy",
 	"repo": "ahilles107/nps-docs",
-	"twitter": ["ahilles107", "sourcefabric"],
+	"twitter": ["sourcefabric"],
 	"google_analytics": "",
 	"links": {
 		"Official plugins repository": "https://github.com/newscoop",
 		"Newscoop GitHub Repo": "https://github.com/sourcefabric/newscoop",
-		"Help/Support/Bugs": "https://github.com/justinwalsh/daux.io/issues",
 		"Made by Sourcefabric": "http://sourcefabric.org"
 	}
 }
