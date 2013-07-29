@@ -1,7 +1,7 @@
 {
 	"title": "Newscoop Plugins System",
 	"tagline": "The way to extending Newscoop cms",
-	"image": "img/app.png",
+	"image": "",
 	"theme": "navy",
 	"repo": "ahilles107/nps-docs",
 	"twitter": ["ahilles107", "sourcefabric"],
