@@ -1,15 +1,15 @@
 {
-	"title": "DAUX.IO",
-	"tagline": "The Easiest Way To Document Your Project",
+	"title": "Newscoop Plugins System",
+	"tagline": "The way to extending Newscoop cms",
 	"image": "img/app.png",
 	"theme": "navy",
-	"repo": "justinwalsh/daux.io",
-	"twitter": ["justin_walsh", "todaymade"],
-	"google_analytics": "UA-12653604-10",
+	"repo": "ahilles107/nps-docs",
+	"twitter": ["ahilles107", "sourcefabric"],
+	"google_analytics": "",
 	"links": {
-		"Download": "https://github.com/justinwalsh/daux.io/archive/master.zip",
-		"GitHub Repo": "https://github.com/justinwalsh/daux.io",
+		"Official plugins repository": "https://github.com/newscoop",
+		"Newscoop GitHub Repo": "https://github.com/sourcefabric/newscoop",
 		"Help/Support/Bugs": "https://github.com/justinwalsh/daux.io/issues",
-		"Made by Todaymade": "http://todaymade.com"
+		"Made by Sourcefabric": "http://sourcefabric.org"
 	}
 }
