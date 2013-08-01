@@ -1,7 +1,7 @@
-FacebookNewscoopBundle
+Facebook Newscoop Bundle
 ======================
 
-Usefull sevices for integration Newscoop and Facebook.
+Usefull services for integration Newscoop and Facebook.
 
 Facebook caches shared urls for better performance. It can cause some problems at the time we want to change title, decscripton of our article because we still have an older version of our article. This is why this plugin is designed for.
 
@@ -28,6 +28,42 @@ Go to an article edition in Newscoop to see Newscoop Facebook Plugin on the righ
 
 Also read more about [Lifecycle Subscriber Managing](https://wiki.sourcefabric.org/display/NPS/Lifecycle+Subscriber+Managing).
 
+###More about plugin 
+
+
+Plugin has only one Entity: `Facebook.php`. After plugin is installed in your database will show up new table: `plugin_facebook_informations`.
+
+This table keep informations from Facebook about an article, such a:
+- `article` - article ID
+- `language` - article's language ID
+- `title` - article title
+- `description` - article description
+- `created_at` - date when informations were added
+- `is_active` - informations status
+
+**Smarty Plugin**
+
+In `AHS/FacebookNewscoopBundle/Resources/smartyPlugins` directory you will find file called: `block.facebook_meta_block.php`
+
+This file is facebook metadata block plugin. It generates the Facebook Meta information for a page.
+
+Smarty Plugin will be automatically autoloaded and available in your templates.
+
+It adds code (Open Graph tags) to your article template as follows:
+
+```
+//ex.
+<meta property="og:title" content="Lionel Messi: the Argentinean who makes children dream all over the world" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://newscoop.dev/en/may2013/sports/80/Lionel-Messi-the-Argentinean-who-makes-children-dream-all-over-the-world.htm" />
+<meta property="og:site_name" content="The New Custodian" />
+<meta property="og:description" content="Malorum prompta maiestatis ius at, vim movet cotidieque ei. Erroribus torquatos vel et, pri nostro causae gubergren id. Per ut cetero laoreet recteque, cetero lucilius phaedrum his at" />
+<meta property="og:image" content="http://newscoop.dev/images/cms-image-000000124.jpg" />
+```
+More about Open Graph tags: 
+
+    https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/
+
 Plugin in action:
 -------
 When you enter an article edition in Newscoop, plugin will automatically look into database and check if there are already informations about that article, if not then it will connect to Facebook Graph API and download all necessary informations. Next, informations will be inserted into database.
@@ -43,23 +79,21 @@ If for some reasons connection to Facebook won't be possible, we will see error 
 ![Screen 1](http://i42.tinypic.com/30k65x0.png)
 
 **Screen 1:** General Plugin view.
+
 ![Screen 2](http://i42.tinypic.com/2qve24x.png)
 **Screen 2:** Connecting message after button click.
+
 ![Screen 3](http://i42.tinypic.com/6tp9nl.png)
 **Screen 3:** Connection to Facebook failed - status message.
+
 
 License
 -------
 
-This bundle is under the GNU General Public License v3. See the complete license in the bundle:
+This bundle is under the GNU GPL v.3. See the complete license in the bundle:
 
-    LICENSE.txt - http://www.gnu.org/licenses/gpl-3.0.txt
+    LICENSE.txt or http://www.gnu.org/licenses/gpl-3.0.txt
 
 About
 -------
 FacebookNewscoopBundle is a [Sourcefabric o.p.s](https://github.com/sourcefabric) initiative.
-
-[1]: http://getcomposer.org/doc/00-intro.md
-[packagist]: https://packagist.org/
-[github]: https://github.com/
-[satis]: https://github.com/composer/satis
