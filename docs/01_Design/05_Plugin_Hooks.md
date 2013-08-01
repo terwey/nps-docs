@@ -16,7 +16,7 @@ system_pref/do_edit.php
 pub/pub_form.php
 ````
 2. Hooks implementation:
-
+-------------
 Hooks are implemented in files listed in point **1.** as follows:
 ````
 //ex. 1
