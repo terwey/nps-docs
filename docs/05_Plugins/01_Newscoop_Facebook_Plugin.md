@@ -55,9 +55,15 @@ It adds code (Open Graph tags) to your article template as follows:
 //ex.
 <meta property="og:title" content="Lionel Messi: the Argentinean who makes children dream all over the world" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://newscoop.dev/en/may2013/sports/80/Lionel-Messi-the-Argentinean-who-makes-children-dream-all-over-the-world.htm" />
+<meta property="og:url" content="http:/newscoop.dev/en/may2013/sports/80/Lionel-Messi-the-Argentinean-who-makes-children-dream-all-over-the-world.htm" />
 <meta property="og:site_name" content="The New Custodian" />
+<meta property="og:locale" content="en" />
 <meta property="og:description" content="Malorum prompta maiestatis ius at, vim movet cotidieque ei. Erroribus torquatos vel et, pri nostro causae gubergren id. Per ut cetero laoreet recteque, cetero lucilius phaedrum his at" />
+<meta property="article:section" content="Sports" />
+<meta property="article:author" content="Amerigo Vespucci" />
+<meta property="article:published_time" content="2013-05-02 08:17:08" />
+<meta property="fb:app_id" content="499467366771848" />
+<meta property="fb:admins" content="123422,234223432,234234234,23423423" />
 <meta property="og:image" content="http://newscoop.dev/images/cms-image-000000124.jpg" />
 ```
 More about Open Graph tags: 
