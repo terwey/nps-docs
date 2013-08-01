@@ -6,7 +6,7 @@ As you may already know, there are two types of events in our **Newscoop Plugin 
 1. Which screens are able to use hooks?
 -------------
 
-Hooks are currently implemented in following PHP admin files:
+Hooks are currently implemented in the following PHP admin files (directory: `newscoopRoot/admin-files/`):
 ````
 issues/edit.php
 sections/edit.php
@@ -40,18 +40,27 @@ Hooks are implemented in files listed in point **1.** as follows:
 ````
 3. How to create hook in your plugin?
 -------------
+Let's define our hook as a service (plugin will show up in `articles/edit_html.php` file):
+````
+//Resources/config/services.yml
+newscoop_example_plugin.hooks.listener:
+        class:     "Newscoop\ExamplePluginBundle\EventListener\HooksListener"
+        arguments: ["@service_container"]
+        tags:
+          - { name: kernel.event_listener, event: newscoop_admin.interface.article.edit.sidebar, method: sidebar }
+````
 
-It's not so complicated as you may think. In `Controller` folder of your plugin directory: `ex. /Newscoop/ExamplePluginBundle/` you have to create `HookController.php` file (of course you can choose your own name):
+It's not so complicated as you may think. In `EventListener` folder of your plugin directory: `ex. /Newscoop/ExamplePluginBundle/` you must create `HookListener.php` file (name must match name we specified in `services.yml`):
 
 ````php
 <?php
 
-namespace Newscoop\ExamplePluginBundle\Controller;
+namespace Newscoop\ExamplePluginBundle\EventListener;
 
 use Symfony\Component\HttpFoundation\Request;
 use Newscoop\EventDispatcher\Events\PluginHooksEvent;
 
-class HooksController
+class HooksListener
 {
     private $container;
 
@@ -60,7 +69,7 @@ class HooksController
         $this->container = $container;
     }
 
-    public function sidebarAction(PluginHooksEvent $event)
+    public function sidebar(PluginHooksEvent $event)
     {
         $response = $this->container->get('templating')->renderResponse(
             'NewscoopExamplePluginBundle:Hooks:sidebar.html.twig',
@@ -74,65 +83,23 @@ class HooksController
     }
 }
 ````
-Action `sidebarAction()` parameter takes an event of `PluginHooksEvent` type.
+Method `sidebar()` takes an event of `PluginHooksEvent` type as parameter.
 
-`PluginHooksEvent.php` class collect Response objects from plugins admin iterface hooks: 
+[PluginHooksEvent.php](https://github.com/sourcefabric/Newscoop/blob/master/newscoop/library/Newscoop/EventDispatcher/Events/PluginHooksEvent.php) class collect Response objects from plugins admin iterface hooks: 
 
-````php
-<?php
-/**
- * @author Paweł Mikołajczuk <pawel.mikolajczuk@sourcefabric.org>
- * @package Newscoop
- * @copyright 2013 Sourcefabric o.p.s.
- * @license http://www.gnu.org/licenses/gpl-3.0.txt
- */
 
-namespace Newscoop\EventDispatcher\Events;
-
-use Symfony\Component\EventDispatcher\GenericEvent as SymfonyGenericEvent;
-use Symfony\Component\HttpFoundation\Response;
-
-/**
- * PluginHooksEvent class.
- *
- * Collect Response objects from plugins admin iterface hooks.
- */
-class PluginHooksEvent extends SymfonyGenericEvent
-{   
-    /**
-     * Array with Response objects from hooks
-     * @var array
-     */
-    public $hooksResponses = array();
-
-    /**
-     * Add Response object to event
-     * @param Response $response
-     */
-    public function addHookResponse(Response $response)
-    {   
-        $this->hooksResponses[] = $response;
-    }
-
-    /**
-     * Get all stored Response objects from event
-     * @return array
-     */
-    public function getHooksResponses()
-    {
-        return $this->hooksResponses;
-    }
-}
-````
 Another step is to create view file in your `Resources/views/` directory of your plugin.
 
-Let's create `Hooks` folder (if our Controller name is `HookController` then folder name in `Resources/views/` directory should be `Hook`).
+Let's create `Hooks` folder we set in our HooksListener (`NewscoopExamplePluginBundle:Hooks:sidebar.html.twig`)
 
-Inside this folder let's create view for our action in Controller: `sidebar.html.twig`.
-This view file is our plugin view and it will show up in files where Plugin Hooks are implemented (look at point **1.**). We can place Html/JS/Twig etc. code there:
+Inside this folder let's create view for our action in Listener: `sidebar.html.twig`.
+This view file is our plugin view and it will show up in files where Plugin Hooks are implemented. We can place HTML/JS/Twig etc. code there:
 
 ````
 <div class="articlebox" title="{{ pluginName }}">
     <p>{{ info }}</p>
 </div>
 ````
+That's it. Plugin response from our hook will show up in article edition view:
+
+![Screen1](http://i41.tinypic.com/16a1j85.png)

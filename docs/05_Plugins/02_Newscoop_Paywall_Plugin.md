@@ -1,0 +1,2 @@
+Newscoop Paywall Plugin
+======================
