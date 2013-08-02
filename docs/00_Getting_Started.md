@@ -2,8 +2,8 @@
 
 ## Features
 
-* Add custom routes (with controlers and views)
-* Add plugin hooks into newscoop admin panel interface (article edit screen)
+* Add custom routes (with controllers and views)
+* Add plugin hooks into Newscoop admin panel interface (article edit screen)
 * Play with database
 * Provide plugin translations
 * Add new smarty blocks/functions

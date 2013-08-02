@@ -1,5 +1,5 @@
 <p class="lead">
-	<strong>Newscoop Plugins system</strong> is the way to extending Newscoop cms.
+	<strong>Newscoop Plugins system</strong> is the way to extending Newscoop CMS.
 </p>
 
 <hr/>

@@ -5,7 +5,7 @@ Usefull services for integration Newscoop and Facebook.
 
 Facebook caches shared urls for better performance. It can cause some problems at the time we want to change title, decscripton of our article because we still have an older version of our article. This is why this plugin is designed for.
 
-**Purpose:** Clear an article cache on Facebook.
+**Purpose:** Clear an article cache on Facebook and add Open Graph tags.
 
 Installing Newscoop Facebook Plugin Guide
 -------------
@@ -18,9 +18,9 @@ Installation is a quick process:
 ### Step 1: Installing plugin through our Newscoop Plugin System
 Run the command:
 ``` bash
-$ php application/console plugins:install "ahs/facebook-newscoop-bundle" --env=prod
+$ php application/console plugins:install "newscoop/facebook-newscoop-bundle" --env=prod
 ```
-Plugin will be installed to your project's `newscoop/plugins/AHS` directory.
+Plugin will be installed to your project's `newscoop/plugins/Newscoop` directory.
 
 
 ### Step 2: That's all!
@@ -41,9 +41,9 @@ This table keep informations from Facebook about an article, such a:
 - `created_at` - date when informations were added
 - `is_active` - informations status
 
-**Smarty Plugin**
+**Generating Open Graph tags using Smarty Plugin**
 
-In `AHS/FacebookNewscoopBundle/Resources/smartyPlugins` directory you will find file called: `block.facebook_meta_block.php`
+In `Newscoop/FacebookNewscoopBundle/Resources/smartyPlugins` directory you will find file called: `block.facebook_meta_block.php`
 
 This file is facebook metadata block plugin. It generates the Facebook Meta information for a page.
 
@@ -73,9 +73,7 @@ Smarty plugin will generate HTML code:
 <meta property="og:image" content="http://newscoop.dev/images/cms-image-000000124.jpg" />
 ```
 
-More about Open Graph tags: 
-
-    https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/
+More about Open Graph tags [here](https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/).
 
 Plugin in action:
 -------
@@ -103,9 +101,7 @@ If for some reasons connection to Facebook won't be possible, we will see error 
 License
 -------
 
-This bundle is under the GNU GPL v.3. See the complete license in the bundle:
-
-    LICENSE.txt or http://www.gnu.org/licenses/gpl-3.0.txt
+This bundle is under the GNU GPL v.3. See the complete license in the bundle: [LICENSE.txt](https://raw.github.com/takeit/FacebookNewscoopBundle/master/LICENSE.txt)
 
 About
 -------
